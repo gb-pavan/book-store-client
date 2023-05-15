@@ -10,7 +10,7 @@ const Home = () => {
   const [fetchedBooks, setFetchedBooks] = useState([])
   
   useEffect(()=>{
-    fetch('https://book-app-backend-app.onrender.com/getbooks/',{method: 'GET'}).then(response => response.json()).then(jsonData => setFetchedBooks(jsonData))
+    fetch('https://book-app-backend-app-render.onrender.com/getbooks/',{method: 'GET'}).then(response => response.json()).then(jsonData => setFetchedBooks(jsonData))
   },[])
 
 

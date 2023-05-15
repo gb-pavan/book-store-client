@@ -15,7 +15,7 @@ const FormField = props => {
   })
 
   useEffect(()=>{
-    fetch('https://book-app-backend-app.onrender.com/getbookscount/',{method: 'GET'}).then(response => response.json()).then(jsonData => setBooksCount(jsonData.bookscount))
+    fetch('https://book-app-backend-app-render.onrender.com/getbookscount/',{method: 'GET'}).then(response => response.json()).then(jsonData => setBooksCount(jsonData.bookscount))
   },[])
 
   const handleTitleChange = event => {
@@ -55,7 +55,7 @@ const FormField = props => {
     }
 
     
-    const addBook = await fetch('https://book-app-backend-app.onrender.com/addbook/', {
+    const addBook = await fetch('https://book-app-backend-app-render.onrender.com/addbook/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

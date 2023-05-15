@@ -15,7 +15,7 @@ const BookDetailedView = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3008/getbooks/${id}`, {
+        const response = await fetch(`https://book-app-backend-app-render.onrender.com/getbooks/${id}`, {
           method: 'POST',
           body: JSON.stringify(bookId),
         });
