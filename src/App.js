@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import {Switch,Route} from 'react-router-dom'
+import ListView from './components/ListView'
+import FormField from './components/FormField'
+import BookDetailedView from './components/BookDetailedView'
+import Navigator from './components/Navigator'
+
 import './App.css';
 
-function App() {
+import React from 'react'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="responsive-container">
+        <Navigator />
+        <div className="app-body">
+          <Switch>
+            <Route exact path="/bookslistview" component={ListView} />
+            <Route exact path="/addbook" component={FormField} />
+            <Route exact path="/getbooks/:id" component={BookDetailedView} />
+          </Switch>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+
